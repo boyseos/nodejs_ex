@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+ <ul>
+	 <li v-for="item of items" :name="item.name" @click="choice" v-model="item.qty">
+		{{item.name}} : {{item.price}} 원    {{item.qty}}개
+	 </li>
+ </ul>
+ <button @click="buy">구매</button>
+ <p>합계 : {{totalPrice}} 원</p>
+</div>
+<script>
+const items = [
+	{name : '연필', price : 300, qty : 0},
+	{name : '샤프', price : 1000, qty : 0},
+	{name : '볼펜', price : 500, qty : 0},
+	{name : '지우개', price : 200, qty : 0}
+]
+const app = new Vue({
+	el : '#app',
+	data : {
+		items : items
+	},
+	methods : {
+		buy(){
+			alert(`구매버튼 클릭`)
+		},
+		choice(){
+			
+		}
+	},
+	computed : {
+		totalPrice(){
+			return this.items.reduce((sum,item)=>{
+				return sum + (item.price * 2)
+			},0)
+		} 
+	},
+	created : function(){
+		console.log('뷰생성')
+	}
+})
+console.log(app)
+</script>
+</body>
+</html>

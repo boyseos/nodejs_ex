@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<div id="box">
+	<h3>성별은 무엇입니까?</h3>
+	<input type="radio" name="gender" value="M" checked> 남 |
+	<input type="radio" name="gender" value="F"> 여
+	<br>
+	<h3>결혼은 당연히 안했지?</h3>
+	<input type="radio" name="married" value="Y" checked> 기혼 |
+	<input type="radio" name="married" value="N"> 미혼
+	<input type="button" id="btn" value="확인">
+</div>
+<body>
+	<script>
+		window.onload = () =>{
+			const $genders = document.getElementsByName('gender')
+			const $marrieds = document.getElementsByName('married')
+			const $btn = document.getElementById('btn')
+			const $box = document.getElementById('box')
+			let temp = ''
+			let memo = ''
+			$btn.onclick = function(){
+				if(memo === ''){
+					memo = ($genders[0].checked == true ? '<h1>남성' : '<h1>여성') +
+						($marrieds[0].checked == true ? '기혼</h1>' : '미혼</h1>')
+					$box.removeChild(this)
+					temp = $box.innerHTML
+					$box.innerHTML = memo
+					$box.appendChild(this)
+				}else{
+					memo = ''
+					console.log(temp)					
+					$box.innerHTML = temp
+					$box.appendChild(this)
+				}
+			}
+		}	
+	</script>
+</body>
+</html>

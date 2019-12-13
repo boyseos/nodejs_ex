@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+window.onload = function(){
+	let id = 'exist'
+	function User(){
+		this._id
+		this._pw
+		this.getId = function(){
+			return this._id
+		}
+		this.getPw = function(){
+			return this._pw
+		}
+		this.setId = function(id){
+			this._id = id
+		}
+		this.setPW = function(pw){
+			this._pw = pw
+		}
+		this.toString = function(){
+			console.log(`아이디는 (${_id})이고 비밀번호는 ${_pw}입니다.`)
+		}
+	}
+	/* function User(user){
+		this.id = user.id
+		this.pw = user.pw
+	} */
+	let user = new User()
+	user.setId('asd')
+	user.setPW('asdf3')
+	console.log(`아이디 = ${user.getId()}`)
+	let list = {_id : '바보', _pw : '멍청이'}
+	user.setPW('asdf')
+	user.toString()
+	delete user._pw
+	user.toString()
+	console.log(list.length)
+	console.log(user)
+	winodow.alert('asdf')
+}
+</script>
+</body>
+</html>

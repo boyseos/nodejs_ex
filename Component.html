@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="Component.js"></script>
+</head>
+<body>
+<script>
+	window.onload = () => {
+/* 		const inputText = new Factory('inputText')
+		const br = new Factory('br')
+		const inputButton = new Factory('inputButton') */
+		const component = new Component()
+		document.body.appendChild(component.inputText())
+		document.body.appendChild(component.br())
+		document.body.appendChild(component.inputButton())
+		/* const cho = document.getElementsByTagName('choice')
+		cho[0].onchange = function(){
+			if(this.value != 0){
+				const obj = factory(this.value)
+				obj.play(this)
+			} 
+		}*/
+	}	
+</script>
+</body>
+</html>

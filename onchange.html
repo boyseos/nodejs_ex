@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<select name="" id="nation">
+		<option value="">번호를 고르세요</option>
+		<option value="0">No.0</option>
+		<option value="1">No.1</option>
+		<option value="2">No.2</option>
+		<option value="3">No.3</option>
+	</select>
+	<ul>
+		<li>대한민국</li>
+		<li>미국</li>
+		<li>중국</li>
+		<li>배트맨</li>
+	</ul>
+	<script>
+		window.onload = () =>{
+			const $nation = document.getElementById('nation')
+			const $li = document.getElementsByTagName('li')
+			$nation.onchange = function(){
+				$li[0].style.backgroundColor = '#ffdd33'
+				$li[1].style.backgroundColor = '#dddd33'
+				$li[2].style.backgroundColor = '#22dd33'
+				$li[3].style.backgroundColor = '#ffaa33'
+				$li[this.value].style.backgroundColor = 'black'
+			}
+		}
+	</script>
+</body>
+</html>

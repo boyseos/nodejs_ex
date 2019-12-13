@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="VendingMachine.js"></script>
+	<script src="VendingMachineService.js"></script>
+	<script src="VendingMachineUtil.js"></script>
+	<script src="Component.js"></script>
+</head>
+<body>
+<script>
+window.onload = function(){
+	service.init()
+	const vm = new VendingMachine()
+	let app=[
+		{tag : 'input', type : 'text', id : 'cost'},
+		{tag : 'br'},
+		{tag : 'input', type : 'button',text : '버튼',id : 'btn'}	]
+	.map(i =>{document.body.appendChild(compo.domCreate(i))})
+	document.getElementById('btn')
+	.addEventListener('click',function(){
+		//alert(`현재 금액 : ${vm.insertCoin(document.getElementById('cost').value)}`)
+		app = [{tag : 'div', type : 'text', text : '콜라', id : 'coke', cost : 400, ctn : 0},{tag : 'br'},
+		{tag : 'div', type : 'text', text : '사이다',id : 'cyder', cost : 700, ctn : 0},{tag : 'br'},
+		{tag : 'div', type : 'text', text : '환타',id : 'fanta', cost : 900, ctn : 0},{tag : 'br'},
+		{tag : 'input', type : 'button', id : 'payment'}]
+		.map(i =>{document.body.appendChild(compo.domCreate(i))})
+	})
+}
+</script>
+</body>
+</html>

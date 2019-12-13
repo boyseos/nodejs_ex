@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="AnimalService.js"></script>
+	<script src="Animal.js"></script>
+</head>
+<body>
+<script>
+window.onload = function(){
+	const init = new Initalizer()
+	init.animal()
+	const a = new Animal()
+	a.setName('고냥이')
+	console.log(`동물이름 : ${a.getName()}`)
+	console.log(a)
+	init.human()
+	let b = new Human()
+	b.setName(`아무개`)
+	let h = new Human()
+	console.log(`사람이름 : ${b.test()}`)
+	console.log(b)
+	init.superHero()
+	let c = new SuperHero()
+	//c.setName(`어밴져스`)
+	console.log(`마블영웅 : ${c.test()}`)
+	console.log(c)
+	let d = {name : 'asdf'}
+	console.log(d)
+}
+</script>
+</body>
+</html>
